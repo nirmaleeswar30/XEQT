@@ -5,6 +5,7 @@ import { ArrowRight, Brain, Target, Users, Code, Newspaper, TargetIcon, Lightbul
 import { Link } from 'react-router-dom';
 import ServicesSection from './HomeService';
 import SolutionSection from './SolutionSection';
+import NewsSection from './NewsSection';
 
 const FadeInSection = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView({
@@ -204,38 +205,7 @@ const Home = () => {
       
 
       {/* Latest News */}
-      <section className="py-20 bg-gray-50">
-        <FadeInSection>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-center mb-12">Latest News</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="bg-white rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src={`https://images.unsplash.com/photo-${item === 1 ? '1451187580459-43490279c0fa' : item === 2 ? '1522071820081-009f0129c71c' : '1517245386807-bb43f82c33c4'}?auto=format&fit=crop&q=80`}
-                    alt="News"
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2">
-                      Latest Technology Trends {item}
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Stay updated with the latest developments in technology and IT consulting.
-                    </p>
-                    <Link
-                      to="/news"
-                      className="text-black font-medium hover:underline"
-                    >
-                      Read More →
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeInSection>
-      </section>
+      <NewsSection/>
     </div>
   );
 };

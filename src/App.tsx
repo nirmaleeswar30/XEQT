@@ -9,6 +9,7 @@ import About from './pages/About.tsx';
 import Contact from './pages/Contact.tsx';
 import ServiceDetail from './pages/ServiceDetail.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import TermsAndConditions from './pages/TermsandConditions.tsx';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsAndConditions />} />
           </Routes>
         </main>
         <Footer />
