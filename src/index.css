@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white hover:bg-gray-900;
+  }
+
+  .btn-outline {
+    @apply border-black text-black hover:bg-black hover:text-white;
+  }
+}
