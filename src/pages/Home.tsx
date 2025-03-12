@@ -52,7 +52,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl mb-8"
           >
-            IT Consulting Services and Training
+            Innovate with IT, strategize with consulting, and thrive through training
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,13 @@ const Home = () => {
               <h2 className="text-3xl font-bold mb-4">XEQT stands for XEQT<span className="italic">knowledge</span>®</h2>
               <p className="text-gray-700 mb-6">We know we achieve <strong>Great Results Through Strategic Partnership and Knowledge Sharing®</strong>, which is why we view each interaction with our clients, candidates, consultants and communities as an opportunity to build lasting personal relationships and business partnerships.</p>
               <p className="text-gray-700 mb-8">We invite you to learn more about our process, our people and how we reimagine how business gets done.</p>
-              <button className="bg-gray-800 text-white py-3 px-6 rounded-md hover:bg-gray-900 transition-colors">About XEQT</button>
+              <Link 
+                  to="/about" 
+                  className="bg-gray-800 text-white py-3 px-6 rounded-md hover:bg-gray-900 transition-colors inline-block"
+                >
+                  About XEQT
+                </Link>
+
             </div>
           </div>
         </div>

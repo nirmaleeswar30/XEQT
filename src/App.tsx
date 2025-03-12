@@ -8,6 +8,7 @@ import Courses from './pages/Courses.tsx';
 import About from './pages/About.tsx';
 import Contact from './pages/Contact.tsx';
 import ServiceDetail from './pages/ServiceDetail.tsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />

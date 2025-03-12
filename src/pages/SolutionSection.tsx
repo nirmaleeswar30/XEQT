@@ -78,7 +78,7 @@ const SolutionsShowcase: React.FC = () => {
         {/* Talent Solutions option */}
         <div 
           className={`absolute cursor-pointer top-6 -left-10 transform -translate-x-16 transition-all ${activeOption === 'talent' ? 'font-bold text-orange-500' : 'text-gray-500'}`}
-          onClick={() => setActiveOption('talent')}
+          onMouseEnter={() => setActiveOption('talent')}
         >
           Talent Solutions »
         </div>
@@ -86,7 +86,7 @@ const SolutionsShowcase: React.FC = () => {
         {/* Team Solutions option */}
         <div 
           className={`absolute cursor-pointer top-6 -right-12 transform translate-x-16 transition-all ${activeOption === 'team' ? 'font-bold text-orange-500' : 'text-gray-500'}`}
-          onClick={() => setActiveOption('team')}
+          onMouseEnter={() => setActiveOption('team')}
         >
           Team Solutions »
         </div>
@@ -94,7 +94,7 @@ const SolutionsShowcase: React.FC = () => {
         {/* Project Solutions option */}
         <div 
           className={`absolute cursor-pointer top-64 -right-16 transform translate-x-16 transition-all ${activeOption === 'project' ? 'font-bold text-orange-500' : 'text-gray-500'}`}
-          onClick={() => setActiveOption('project')}
+          onMouseEnter={() => setActiveOption('project')}
         >
           Project Solutions »
         </div>
