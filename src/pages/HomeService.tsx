@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
-import { Cloud, Shield, Code, Database, Server, Laptop } from 'lucide-react';
+import { Cloud, Shield, Code, Database, Server, GraduationCap } from 'lucide-react';
 
 const FadeInSection = ({ children }: { children: React.ReactNode }) => {
   const [ref, inView] = useInView({
@@ -22,39 +22,39 @@ const FadeInSection = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Service details imported from serviceDetails object
-const serviceDetails = {
-  'cloud-solutions': {
-    title: 'Cloud Solutions',
-    description: 'Transform your business with scalable and secure cloud infrastructure solutions.',
-    icon: Cloud
-  },
-  'cybersecurity': {
-    title: 'Cybersecurity',
-    description: 'Protect your business with comprehensive cybersecurity solutions.',
-    icon: Shield
-  },
-  'custom-development': {
-    title: 'Custom Development',
-    description: 'Build tailored software solutions to meet your unique business needs.',
-    icon: Code
-  },
-  'data-management': {
-    title: 'Data Management',
-    description: 'Optimize your data infrastructure for better business intelligence.',
-    icon: Database
-  },
-  'it-infrastructure': {
+// Updated services array
+const services = [
+  {
     title: 'IT Infrastructure',
-    description: 'Build a robust and scalable IT infrastructure for your organization.',
-    icon: Server
+    icon: Server,
+    description: 'Robust IT infrastructure solutions for improved efficiency and reliability.',
   },
-  'it-training': {
-    title: 'IT Training',
-    description: 'Empower your team with comprehensive IT training programs.',
-    icon: Laptop
-  },
-};
+  {
+    title: 'Cloud Solutions',
+    icon: Cloud,
+    description: 'Scalable cloud infrastructure and migration services to power your digital transformation.',
+      },
+  {
+    title: 'Data Management',
+    icon: Database,
+    description: 'End-to-end data solutions for better business intelligence and decision making.',
+     },
+  {
+    title: 'Web Hosting',
+    icon: Code,
+    description: 'Comprehensive web hosting solutions designed to ensure your online presence is secure, fast, and reliable, tailored to meet your specific business needs.',
+     },
+  {
+    title: 'Managed Support',
+    icon: GraduationCap,
+    description: 'Dedicated managed support services to ensure your systems run smoothly, with proactive monitoring, troubleshooting, and expert assistance available 24/7.',
+      },
+  {
+    title: 'Cybersecurity',
+    icon: Shield,
+    description: 'Comprehensive security solutions to protect your business from evolving cyber threats.',
+      },
+];
 
 // Updated Services Section Component
 const ServicesSection = () => {
@@ -64,12 +64,12 @@ const ServicesSection = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(serviceDetails).map(([key, service]) => {
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <Link
-                  key={key}
-                  to={`/services/${key}`}
+                  key={index}
+                  to={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                   className="p-6 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300 group"
                 >
                   <Icon className="w-12 h-12 mb-4 group-hover:text-black transition-colors" />
@@ -77,7 +77,7 @@ const ServicesSection = () => {
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <p className="text-black font-medium group-hover:underline transition-all">Learn more →</p>
                 </Link>
-              )
+              );
             })}
           </div>
         </div>

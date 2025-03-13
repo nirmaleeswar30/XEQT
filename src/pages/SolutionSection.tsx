@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import React, { useState } from 'react';
 
 // Define types for our solution data
@@ -105,7 +106,8 @@ const SolutionsShowcase: React.FC = () => {
   const activeSolution = solutions[activeOption];
 
   return (
-    <div className="flex flex-col md:flex-row items-start justify-between p-8 max-w-7xl mx-auto">
+    <div className='bg-slate-100'>
+      <div className="flex flex-col md:flex-row items-start justify-between p-8 max-w-7xl mx-auto py-36">
       {/* Left side - Semi-circular menu */}
       <div className="flex-shrink-0 md:mt-8">
         {renderCircularMenu()}
@@ -146,6 +148,7 @@ const SolutionsShowcase: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

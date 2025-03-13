@@ -118,8 +118,8 @@ const Home = () => {
       </section>
 
       {/* Kforce-like Section */}
-      <section className="py-16 bg-gray-50 ">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="py-24 bg-gray-50 ">
+        <div className="container mx-auto px-4 max-w-8xl">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
               <h2 className="text-3xl font-bold mb-6">Merging your vision and our expertise, we help you achieve powerful results</h2>
@@ -155,8 +155,8 @@ const Home = () => {
       <ServicesSection />
 
       {/* Kforce Knowledge Section */}
-      <section className="py-16 bg-teal-50">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="py-36 bg-teal-50">
+        <div className="container mx-auto px-4 max-w-8xl">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 relative">
               <div className="absolute -top-10 -left-10 w-32 h-32">

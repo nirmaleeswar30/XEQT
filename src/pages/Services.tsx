@@ -5,22 +5,16 @@ import { Cloud, Shield, Code, Database, Server, GraduationCap } from 'lucide-rea
 
 const services = [
   {
+    title: 'IT Infrastructure',
+    icon: Server,
+    description: 'Robust IT infrastructure solutions for improved efficiency and reliability.',
+    features: ['Network Design', 'System Integration', 'Infrastructure Monitoring', 'Disaster Recovery'],
+  },
+  {
     title: 'Cloud Solutions',
     icon: Cloud,
     description: 'Scalable cloud infrastructure and migration services to power your digital transformation.',
-    features: ['Cloud Migration', 'AWS/Azure/GCP Solutions', 'Cloud Security', 'Cost Optimization'],
-  },
-  {
-    title: 'Cybersecurity',
-    icon: Shield,
-    description: 'Comprehensive security solutions to protect your business from evolving cyber threats.',
-    features: ['Security Audits', 'Penetration Testing', 'Security Training', 'Incident Response'],
-  },
-  {
-    title: 'Custom Development',
-    icon: Code,
-    description: 'Tailored software solutions designed to meet your specific business needs.',
-    features: ['Web Applications', 'Mobile Apps', 'API Development', 'Legacy System Modernization'],
+    features: ['Cloud Migration', 'SetupBoxs Cloud Solutions', 'Cloud Security', 'Cost Optimization'],
   },
   {
     title: 'Data Management',
@@ -29,17 +23,24 @@ const services = [
     features: ['Data Analytics', 'Database Design', 'Data Migration', 'Business Intelligence'],
   },
   {
-    title: 'IT Infrastructure',
-    icon: Server,
-    description: 'Robust IT infrastructure solutions for improved efficiency and reliability.',
-    features: ['Network Design', 'System Integration', 'Infrastructure Monitoring', 'Disaster Recovery'],
+    title: 'Web Hosting',
+    icon: Code,
+    description: 'Comprehensive web hosting solutions designed to ensure your online presence is secure, fast, and reliable, tailored to meet your specific business needs.',
+    features: ['Website Hosting', 'Domain Registration', 'SSL Certificates', '24/7 Technical Support'],
+  },
+
+  {
+    title: 'Managed Support',
+    icon: GraduationCap,
+    description: 'Dedicated managed support services to ensure your systems run smoothly, with proactive monitoring, troubleshooting, and expert assistance available 24/7.',
+    features: ['Proactive Monitoring', 'Instant Troubleshooting',  'System Optimization','Dedicated Support Teams'],
   },
   {
-    title: 'IT Training',
-    icon: GraduationCap,
-    description: 'Comprehensive training programs to upskill your team with the latest technologies.',
-    features: ['Custom Training Programs', 'Certification Prep', 'Workshops', 'Team Development'],
-  },
+    title: 'Cybersecurity',
+    icon: Shield,
+    description: 'Comprehensive security solutions to protect your business from evolving cyber threats.',
+    features: ['Security Audits', 'Penetration Testing', 'Security Training', 'Incident Response'],
+  }
 ];
 
 const Services = () => {

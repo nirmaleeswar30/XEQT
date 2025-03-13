@@ -14,12 +14,15 @@ const serviceDetails = {
       'Better disaster recovery',
     ],
     features: [
+      'Linux Cloud',
+      'Cloud Nvidia GPU Cards Available',
+      'Cloud Solutions',
       'Cloud migration services',
       'Multi-cloud strategy',
       'Cloud security implementation',
       'Performance optimization',
       'Cost management',
-      'DevOps integration',
+      'DevOps integration'
     ],
   },
   'cybersecurity': {
@@ -32,16 +35,20 @@ const serviceDetails = {
       'Business continuity',
     ],
     features: [
-      'Security assessments',
-      'Penetration testing',
-      'Incident response',
-      'Security training',
-      'Compliance management',
-      '24/7 monitoring',
+      'Risk Assessment',
+      'Patch Management',
+      'Access Control',
+      'Cloud Security',
+      'Data Protection',
+      'Network Security',
+      'Identity Management',
+      'Incident Response',
+      'Application Security',
+      'Compliance Management',
     ],
   },
-  'custom-development': {
-    title: 'Custom Development',
+  'web-hosting': {
+    title: 'Web Hosting',
     description: 'Build tailored software solutions to meet your unique business needs.',
     benefits: [
       'Competitive advantage',
@@ -94,8 +101,8 @@ const serviceDetails = {
       'Maintenance services',
     ],
   },
-  'it-training': {
-    title: 'IT Training',
+  'managed-support': {
+    title: 'Managed Support',
     description: 'Empower your team with comprehensive IT training programs.',
     benefits: [
       'Skilled workforce',
@@ -104,13 +111,18 @@ const serviceDetails = {
       'Innovation culture',
     ],
     features: [
-      'Custom training programs',
-      'Certification preparation',
-      'Hands-on workshops',
-      'Online learning',
-      'Team assessments',
-      'Ongoing support',
-    ],
+      'Cloud Migration',
+      'Disaster Recovery',
+      'Cloud Consulting & Solutions',
+      'cPANEL Support',
+      'Data Migration',
+      'Installation and Deployment Support',
+      'Remote Monitoring & Support',
+      'Auto Scaling & Process Automation',
+      'Windows & Linux Server Management',
+      'Virtualization & Cloud Security',
+      'Backup & Storage Support'
+    ],
   },
 };
 
