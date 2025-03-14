@@ -310,7 +310,7 @@ const courseData: CourseDataType = {
       "duration": "6 weeks",
       "level": "Intermediate",
       "students": "34",
-      "image": "https://images.pexels.com/photos/50711/board-electronics-computer-data-50711.jpeg"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS0PooURoYTCJdatB7dlgRl7un364hNQBlFQ&s"
     },
     {
       "title": "Agile Methodologies",
