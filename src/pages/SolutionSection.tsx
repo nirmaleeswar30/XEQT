@@ -1,5 +1,5 @@
 import { div } from 'framer-motion/client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Define types for our solution data
 interface Solution {
@@ -18,6 +18,23 @@ interface SolutionsData {
 
 const SolutionsShowcase: React.FC = () => {
   const [activeOption, setActiveOption] = useState<'talent' | 'team' | 'project'>('team');
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // Check if the screen is mobile size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Solution options data
   const solutions: SolutionsData = {
@@ -53,6 +70,38 @@ const SolutionsShowcase: React.FC = () => {
 
   // Render the semi-circular menu with improved alignment
   const renderCircularMenu = (): JSX.Element => {
+    if (isMobile) {
+      // Mobile version: Simplified horizontal selection tabs
+      return (
+        <div className="w-full mb-8">
+          <div className="text-center mb-4">
+            <h2 className="text-xl font-bold text-navy-900">SPECTRUM OF SOLUTIONS</h2>
+          </div>
+          <div className="flex justify-between border-b border-gray-200">
+            <button 
+              className={`px-4 py-2 text-sm ${activeOption === 'talent' ? 'font-bold text-orange-500 border-b-2 border-orange-500' : 'text-gray-500'}`}
+              onClick={() => setActiveOption('talent')}
+            >
+              Talent Solutions
+            </button>
+            <button 
+              className={`px-4 py-2 text-sm ${activeOption === 'team' ? 'font-bold text-orange-500 border-b-2 border-orange-500' : 'text-gray-500'}`}
+              onClick={() => setActiveOption('team')}
+            >
+              Team Solutions
+            </button>
+            <button 
+              className={`px-4 py-2 text-sm ${activeOption === 'project' ? 'font-bold text-orange-500 border-b-2 border-orange-500' : 'text-gray-500'}`}
+              onClick={() => setActiveOption('project')}
+            >
+              Project Solutions
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // Desktop version: Original semi-circle design
     return (
       <div className="relative h-80 w-80">
         {/* Semi-circle background */}
@@ -107,48 +156,37 @@ const SolutionsShowcase: React.FC = () => {
 
   return (
     <div className='bg-slate-100'>
-      <div className="flex flex-col md:flex-row items-start justify-between p-8 max-w-7xl mx-auto py-36">
-      {/* Left side - Semi-circular menu */}
-      <div className="flex-shrink-0 md:mt-8">
-        {renderCircularMenu()}
-      </div>
+      <div className={`flex flex-col md:flex-row items-start justify-between p-4 md:p-8 max-w-7xl mx-auto py-12 md:py-36`}>
+        {/* Left side - Semi-circular menu or tabs for mobile */}
+        <div className={`${isMobile ? 'w-full' : 'flex-shrink-0 md:mt-8'}`}>
+          {renderCircularMenu()}
+        </div>
 
-      {/* Right side - Content area with improved spacing */}
-      <div className="flex-1 md:ml-24 mt-8 md:mt-0 max-w-2xl">
-        {/* Solution content box with shadow for better visual appearance */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Image section */}
-          <div className="h-64 bg-black relative">
-            <img 
-              src={activeSolution.image} 
-              alt={`${activeSolution.title} illustration`} 
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Title overlay at top */}
-            <div className="absolute top-0 left-0 bg-black text-white px-6 py-2 rounded-br-lg">
-              <h3 className="text-lg font-bold">{activeSolution.title}</h3>
+        {/* Right side - Content area with improved spacing */}
+        <div className={`flex-1 ${isMobile ? 'w-full' : 'md:ml-24'} mt-4 md:mt-0 max-w-2xl`}>
+          {/* Solution content box with shadow for better visual appearance */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Image section */}
+            <div className="h-48 md:h-64 bg-black relative">
+              <img 
+                src={activeSolution.image} 
+                alt={`${activeSolution.title} illustration`} 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Title overlay at top */}
+              <div className="absolute top-0 left-0 bg-black text-white px-4 md:px-6 py-2 rounded-br-lg">
+                <h3 className="text-base md:text-lg font-bold">{activeSolution.title}</h3>
+              </div>
             </div>
-          </div>
-          
-          {/* Caption section with improved typography */}
-          <div className="p-6">
-            <p className="text-gray-800 font-semibold leading-relaxed">{activeSolution.caption}</p>
             
-            {/* Learn more link with better styling */}
-            {/* <div className="mt-4">
-              <a 
-                href={activeSolution.learnMoreLink} 
-                className="inline-flex items-center text-orange-400 font-semibold hover:text-gray-800 transition-colors"
-              >
-                Learn More 
-                <span className="ml-1">→</span>
-              </a>
-            </div> */}
+            {/* Caption section with improved typography */}
+            <div className="p-4 md:p-6">
+              <p className="text-gray-800 text-sm md:text-base font-semibold leading-relaxed">{activeSolution.caption}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

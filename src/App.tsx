@@ -10,10 +10,12 @@ import Contact from './pages/Contact.tsx';
 import ServiceDetail from './pages/ServiceDetail.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsAndConditions from './pages/TermsandConditions.tsx';
+import ScrollToTop from './components/ScrolltoTop.tsx';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
