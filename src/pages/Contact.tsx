@@ -137,15 +137,15 @@ ${formData.message}
             <div className="space-y-4">
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-3" />
-                <span>123 Tech Street, San Francisco, CA 94105</span>
+                <span>Silicon Valley, California</span>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <Phone className="w-6 h-6 mr-3" />
                 <span>+1 (555) 123-4567</span>
-              </div>
+              </div> */}
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-3" />
-                <span>contact@xeqt.com</span>
+                <span>accounts@xeqtpro.com</span>
               </div>
             </div>
 
